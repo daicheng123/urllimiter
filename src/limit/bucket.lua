@@ -14,7 +14,6 @@ function _M.is_accept(self)
     local now = ngx.now()
     local number = math.floor((now - self.lastTime) * self.rate)
     self.token = self.token + number
-    ngx.log(ngx.INFO, "number: ", number, now, self.lastTime,  now - self.lastTime, "---333333333")
     if self.token > self.capacity then
         self.token = self.capacity
     end
